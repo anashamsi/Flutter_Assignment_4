@@ -57,7 +57,7 @@ class LoginPage extends StatelessWidget {
                       decoration: InputDecoration(
                         // hintText: 'Enter your email',
                         isDense: true,
-                        suffixIcon: Icon(Icons.verified),
+                        suffixIcon: Icon(Icons.verified, color: Colors.black),
                       ),
                     ),
                   ],
@@ -72,12 +72,14 @@ class LoginPage extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold, height: .5),
                     ),
                     TextField(
+                      obscureText: true,
+                      obscuringCharacter: '*',
                       textAlignVertical: TextAlignVertical.bottom,
                       controller: password_controller,
                       decoration: InputDecoration(
                         // hintText: 'Enter your password',
                         isDense: true,
-                        suffixIcon: Icon(Icons.verified),
+                        suffixIcon: Icon(Icons.verified, color: Colors.black),
                       ),
                     ),
                   ],
@@ -93,7 +95,7 @@ class LoginPage extends StatelessWidget {
                     overlayColor: Colors.white,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.5),
+                    padding: const EdgeInsets.all(10),
                     child: Text(
                       'Login',
                       style: TextStyle(
