@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_4/Login_Page.dart';
-import 'package:flutter_assignment_4/SignUp_Screen.dart';
-import 'package:flutter_assignment_4/Splash_Screen.dart';
+import 'package:flutter_assignment_4/Dashboard.dart';
 import 'package:flutter_assignment_4/Success_Screen.dart';
 
 void main() {
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SuccessScreen(),
+      home: Dashboard(),
     );
   }
 }
