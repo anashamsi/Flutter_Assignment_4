@@ -10,7 +10,7 @@ class Dashboard extends StatefulWidget {
 List<String> products = [
   'assets/images/prod-1.jpg',
   'assets/images/prod-2.jpg',
-  'assets/images/prod-3.jpg'
+  'assets/images/prod-3.jpg',
 ];
 List<String> newArrival = [
   'assets/images/arr-1.jpg',
@@ -25,7 +25,6 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20.0),
         child: Column(
@@ -34,18 +33,17 @@ class _DashboardState extends State<Dashboard> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
                   Spacer(),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.search)), 
-                  
+                  IconButton(onPressed: () {}, icon: Icon(Icons.search)),
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             SizedBox(
-              height: 200, 
+              height: 200,
               child: ListView.builder(
-                scrollDirection: Axis.horizontal, 
+                scrollDirection: Axis.horizontal,
                 itemCount: products.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
@@ -64,62 +62,73 @@ class _DashboardState extends State<Dashboard> {
                 },
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: [
-                  Text('New Arrivals',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                  Text(
+                    'New Arrivals',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
                   Spacer(),
                   InkWell(
-                    onTap: (){},
-                    child: Text('View all',style: TextStyle(fontSize: 12, color: Colors.grey),)),
+                    onTap: () {},
+                    child: Text(
+                      'View all',
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
+                    ),
+                  ),
                 ],
               ),
             ),
 
-
             SizedBox(
-              height: 200, 
+              height: 200,
               child: ListView.builder(
-                scrollDirection: Axis.horizontal, 
+                scrollDirection: Axis.horizontal,
                 itemCount: newArrival.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Stack(
                       children: [
-Container(
-                        width: 200,
-                        
-                        decoration: BoxDecoration(
-                          color: Colors.purple,
-                          borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
-                            image: AssetImage(newArrival[index]),
-                            fit: BoxFit.fill,
+                        Container(
+                          width: 200,
+
+                          decoration: BoxDecoration(
+                            color: Colors.purple,
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                              image: AssetImage(newArrival[index]),
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        top: 10,
-                        right: 10,
-                        child: InkWell(
-                          onTap: (){},
-                          child: CircleAvatar(
-                            backgroundColor: Colors.black, radius: 15,
-                            child: Icon(Icons.favorite, color: Colors.white, size: 15,),
+                        Positioned(
+                          top: 10,
+                          right: 10,
+                          child: InkWell(
+                            onTap: () {
+                              print('Tapped!');
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: Colors.black,
+                              radius: 15,
+                              child: Icon(
+                                Icons.favorite,
+                                color: Colors.white,
+                                size: 15,
+                              ),
                             ),
-                        )
-                          )
+                          ),
+                        ),
                       ],
-                      
                     ),
                   );
                 },
               ),
             ),
-            
           ],
         ),
       ),
